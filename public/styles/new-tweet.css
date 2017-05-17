@@ -1,0 +1,25 @@
+.new-tweet {
+  margin: auto 2em;
+  padding: 10px;
+  border: solid 0.5px grey;
+  border-radius: 7px;
+  background-color: #eeeeee;
+}
+
+.compose {
+  border-bottom: 0.5px solid black;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.counter {
+  position: absolute;
+  margin-left: 275px;
+}
+
+.exceedCount {
+  color: red;
+}
