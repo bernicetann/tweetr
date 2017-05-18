@@ -80,12 +80,14 @@ $(function() {
     }
   }
 
+  renderTweets(data);
+
 
   $(".submitTweet").on('submit', function(event) {
     var $submitTweet = $(".submitTweet");
 
     event.preventDefault();
-    var tweetOnPage = $.ajax({
+    $.ajax({
       method: 'POST',
       url: '/tweets',
       data: $submitTweet.serialize()
@@ -93,7 +95,15 @@ $(function() {
   });
 
 
-  renderTweets(data);
+  function loadTweets() {
+    var $loadOnPage = $.ajax({
+      method: 'GET',
+      url: '/tweets'
+    });
+    console.log($loadOnPage);
+  }
+
+  loadTweets();
 
 });
 
