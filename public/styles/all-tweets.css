@@ -7,13 +7,14 @@
 .tweets-container {
   border: 0.5px solid grey;
   border-radius: 7px;
+  margin-bottom: 10px;
 }
 
-article .tweet-header {
+.tweets-container .tweet-header {
   background-color: #eee;
 }
 
-article .avatars {
+.tweets-container .avatars {
   position: relative;
   padding: 10px;
   height: 75px;
@@ -21,43 +22,44 @@ article .avatars {
   border-radius: 20px;
 }
 
-article .name {
+.tweets-container .name {
   margin: 0;
   line-height: 55px;
-
   display: inline-block;
   position: absolute;
   margin-left: 4px;
   vertical-align: middle;
 }
 
-article .handle {
+.tweets-container .handle {
   float: right;
   line-height: 42px;
   padding-right: 15px;
   font-size: small;
   font-style: italic;
-  color: #c5c9c5;
+  color: #676861;
+  font-weight: normal;
+  margin: .5em;
 }
 
-article .tweet-footer {
+.tweets-container .tweet-footer {
   border-top: 0.5px solid black;
   overflow: hidden;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-article .created_at {
+.tweets-container .created_at {
   padding-left: 15px;
 }
 
-article .icons {
+.tweets-container .icons {
   float: right;
   margin-right: 15px;
-  display: none;
+  opacity: .2;
 }
 
-article .content {
+.tweets-container .content {
   background-color: white;
   padding: 15px;
   padding-left: 10px;
@@ -66,7 +68,7 @@ article .content {
 
 .tweets-container:hover .icons {
   color: #26e0cd;
-  display: block;
+  opacity: 1;
 }
 
 
