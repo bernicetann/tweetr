@@ -69,6 +69,12 @@ $(function() {
 
   loadTweets();
 
+  $(".compose").on('click', function(event) {
+    $(".new-tweet").slideToggle("fast", function() {
+      $("textarea").focus();
+    });
+  });
+
 });
 
 
