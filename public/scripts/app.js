@@ -6,6 +6,9 @@
 
 $(function() {
 
+  let $tweetSection = $('#all-tweets');
+
+  //Creates new tweet container for every new tweet.
   function createTweetElement(tweet) {
 
     let $tweetContainer = $("<article>").addClass("tweets-container");
@@ -15,7 +18,7 @@ $(function() {
     let $image = $("<img>").addClass("avatars").attr('src', tweet.user.avatars.small);
     let $name = $("<h2>").addClass("name").text(tweet.user.name);
     let $handle = $("<h3>").addClass("handle").text(tweet.user.handle);
-    let $created_at = $("<span>").addClass("created_at").text(tweet.created_at);
+    let $created_at = $("<span>").addClass("created_at").text(moment(tweet.created_at).fromNow());
     let $icons = $("<div>").addClass("icons");
 
     $header.append( $image, $name, $handle );
@@ -30,16 +33,17 @@ $(function() {
     return $tweetContainer;
   }
 
-
+  //Loops through every tweet, with the newest tweet at the starting point (ascending order).
   function renderTweets(tweets) {
-    let $tweetSection = $('#all-tweets');
     $tweetSection.empty();
     for(var i = 0; i < tweets.length; i++) {
       $tweetSection.prepend(createTweetElement(tweets[i]));
     }
   }
 
-
+  //Upon clicking the submit button, when the text box is empty or character typed
+  //exceeds the maximum count, it will alert an error message, otherwise post a new
+  //tweet on the same page.
   $(".submitTweet").on('submit', function(event) {
     var $submitTweet = $(".submitTweet");
     var $currentCount = $('#compose').val().length;
@@ -56,14 +60,17 @@ $(function() {
         method: 'POST',
         url: '/tweets',
         data: $submitTweet.serialize()
+      }).success(tweet => {
+        $tweetSection.prepend(createTweetElement(tweet));
+      }).error(error => {
+        console.log('error', error);
       });
-      loadTweets();
       $("#compose").val("");
       $(".counter").text(MAX_TWEET_LENGTH);
     }
   });
 
-
+  //Gets data from /tweets and load every tweet.
   function loadTweets() {
     var $loadOnPage = $.ajax({
       method: 'GET',
@@ -76,6 +83,7 @@ $(function() {
 
   loadTweets();
 
+  //Upon clicking the 'compose button,' the container will toggle and automatically focus on textbox.
   $(".composeButton").on('click', function(event) {
     $(".new-tweet").slideToggle("fast", function() {
       $("#compose").focus();
