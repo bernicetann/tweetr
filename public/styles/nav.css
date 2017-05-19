@@ -24,16 +24,17 @@
   line-height: 80px;
 }
 
-#nav-bar .compose {
+#nav-bar .composeButton {
   margin: 12px;
   float: right;
-  border: solid 1px;
-  background-color: rgb(195, 206, 208);
+  border: solid 1px black;
+  background-color: #add8c4;
   padding: 17px;
   border-radius: 5px;
-  font-weight: normal;
+  /*color: #00a087;*/
 }
 
-.compose:hover {
+.composeButton:hover {
   color: white;
+  background-color: white;
 }

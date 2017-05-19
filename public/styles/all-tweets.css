@@ -5,13 +5,16 @@
 }
 
 .tweets-container {
-  border: 0.5px solid grey;
+  border: 1px solid grey;
   border-radius: 7px;
   margin-bottom: 10px;
+  opacity: 0.75;
 }
 
 .tweets-container .tweet-header {
   background-color: #eee;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
 }
 
 .tweets-container .avatars {
@@ -63,11 +66,17 @@
   background-color: white;
   padding: 15px;
   padding-left: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 
 }
 
-.tweets-container:hover .icons {
+.icons:hover {
   color: #26e0cd;
+  opacity: 1;
+}
+
+.tweets-container:hover {
   opacity: 1;
 }
 

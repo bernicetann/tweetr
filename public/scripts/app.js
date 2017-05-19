@@ -21,6 +21,11 @@ $(function() {
     $header.append( $image, $name, $handle );
     $footer.append( $created_at, $icons );
     $tweetContainer.append( $header, $content, $footer );
+    $icons.append(
+      `<i class="fa fa-flag" aria-hidden="true"></i>
+       <i class="fa fa-retweet" aria-hidden="true"></i>
+       <i class="fa fa-heart" aria-hidden="true"></i>`
+      );
 
     return $tweetContainer;
   }
@@ -53,6 +58,8 @@ $(function() {
         data: $submitTweet.serialize()
       });
       loadTweets();
+      $("#compose").val("");
+      $(".counter").text(MAX_TWEET_LENGTH);
     }
   });
 
@@ -69,9 +76,9 @@ $(function() {
 
   loadTweets();
 
-  $(".compose").on('click', function(event) {
+  $(".composeButton").on('click', function(event) {
     $(".new-tweet").slideToggle("fast", function() {
-      $("textarea").focus();
+      $("#compose").focus();
     });
   });
 
