@@ -1,4 +1,5 @@
 
+/* Styling for navigation bar */
 #nav-bar {
   background-color: #00a087;
   height: 80;
@@ -31,10 +32,8 @@
   background-color: #add8c4;
   padding: 17px;
   border-radius: 5px;
-  /*color: #00a087;*/
 }
 
 .composeButton:hover {
   color: white;
-  background-color: white;
 }

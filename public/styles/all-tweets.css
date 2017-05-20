@@ -1,7 +1,7 @@
+
+/* Styling for all-tweets container */
 #all-tweets {
   margin: 10px 2em;
-  /*border: solid 0.5px grey;
-  border-radius: 7px;*/
 }
 
 .tweets-container {
@@ -59,7 +59,7 @@
 .tweets-container .icons {
   float: right;
   margin-right: 15px;
-  opacity: .2;
+  opacity: 1;
 }
 
 .tweets-container .content {
@@ -68,16 +68,25 @@
   padding-left: 10px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-
 }
 
-.icons:hover {
-  color: #26e0cd;
-  opacity: 1;
-}
-
+/* hover */
 .tweets-container:hover {
   opacity: 1;
 }
 
+.fa-heart:hover {
+  color: red;
+  opacity: 1;
+}
+
+.fa-retweet:hover {
+  color: #26e0cd;
+  opacity: 1;
+}
+
+.fa-flag:hover {
+  color: blue;
+  opacity: 1;
+}
 

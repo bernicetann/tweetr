@@ -44,11 +44,10 @@ $(function() {
   //Upon clicking the submit button, when the text box is empty or character typed
   //exceeds the maximum count, it will alert an error message, otherwise post a new
   //tweet on the same page.
-  $(".submitTweet").on('submit', function(event) {
-    var $submitTweet = $(".submitTweet");
+  $("form").on('submit', function(event) {
     var $currentCount = $('#compose').val().length;
     var MAX_TWEET_LENGTH = 140;
-    var $characterCount = MAX_TWEET_LENGTH - $currentCount
+    var $characterCount = MAX_TWEET_LENGTH - $currentCount;
 
     event.preventDefault();
     if($characterCount === MAX_TWEET_LENGTH ) {
@@ -59,7 +58,7 @@ $(function() {
       $.ajax({
         method: 'POST',
         url: '/tweets',
-        data: $submitTweet.serialize()
+        data: $(this).serialize()
       }).success(tweet => {
         $tweetSection.prepend(createTweetElement(tweet));
       }).error(error => {
@@ -70,13 +69,12 @@ $(function() {
     }
   });
 
-  //Gets data from /tweets and load every tweet.
+  //Gets data from /tweets and loads every tweet.
   function loadTweets() {
-    var $loadOnPage = $.ajax({
+    $.ajax({
       method: 'GET',
       url: '/tweets'
-    });
-    $loadOnPage.done(function (data) {
+    }).done(function (data) {
       renderTweets(data);
     });
   }

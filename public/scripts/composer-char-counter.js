@@ -1,3 +1,5 @@
+
+//Keeps track of the character length
 $(function() {
 
   const MAX_TWEET_LENGTH = 140;
@@ -11,9 +13,9 @@ $(function() {
 
     $counter.text(charactersRemaining);
     if(charactersRemaining < 0) {
-      $counter.addClass("exceedCount");
+      $counter.addClass("exceed-count");
     } else {
-      $counter.removeClass("exceedCount");
+      $counter.removeClass("exceed-count");
     }
   });
 

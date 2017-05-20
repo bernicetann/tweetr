@@ -21,6 +21,7 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.js"></script>
 
   </head>
 
@@ -30,7 +31,9 @@
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png" >
       <span class="header">Tweeter</span>
-      <button class="composeButton" type="button">Compose</button>
+      <button class="composeButton" type="button">
+        <i class="fa fa-pencil-square-o" aria-hidden="true"></i><span>Compose</span>
+      </button>
     </nav>
 
     <!-- Page-specific (main) content here -->
@@ -44,24 +47,9 @@
         </form>
       </section>
 
-       <section id="all-tweets">
-       <!--    <article class="tweets-container">
-            <header class="tweet-header">
-              <img class="avatars" src="https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png" alt="user-icon">
-              <h2 class="name">Username</h2>
-              <h3 class="handle">@MrFields</h3>
-            </header>
-            <p class="content">Little tweet here. . .</p>
-            <footer class="tweet-footer">
-              <span class="created_at">10 days ago</span>
-              <div class="icons">
-                <i class="fa fa-flag" aria-hidden="true"></i>
-                <i class="fa fa-retweet" aria-hidden="true"></i>
-                <i class="fa fa-heart" aria-hidden="true"></i>
-              </div>
-            </footer>
-          </article> -->
-        </section>
+      <section id="all-tweets">
+
+      </section>
 
     </main>
   </body>
